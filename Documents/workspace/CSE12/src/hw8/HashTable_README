@@ -1,0 +1,6 @@
+Hash Table
+
+Project reads strings from a txt file, and stores each word in a hash table.
+Hash table uses a linked list containing linked lists to store based on hash
+Value. Hash table expands and rehashes when it is 2/3 full.
+User can search for a word, insert, delete, and find anagrams to a word.
