@@ -18,7 +18,9 @@ you want full credit.
 Make sure it passes the dlc test. (Ignore warnings of header files)
 dlc will indicate if there is a coding guideline violation.
 
-Submit bits.c on gradescope. More detailed instruction on the submission process will be provided through Piazza
+To submit your code you must:
+1. Commit and push the latest version of your code to your individual or joint repo on github
+2. Submit ONLY the file bits.c on gradescope. Detail instructions on making a submission via gradescope will be provided through Piazza
 
 
 
