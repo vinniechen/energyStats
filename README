@@ -15,21 +15,14 @@ Can work on both emulation and hardware platforms.
 0. Files:
 *********
 
-Makefile        - Makes btest, fshow, and ishow
+Makefile        - Makes bits, fshow, and ishow
 README          - This file
 bits.c          - The file you will be modifying and handing in
 bits.h          - Header file
-btest.c         - The main btest program
-  btest.h       - Used to build btest
-  decl.c        - Used to build btest
-  tests.c       - Used to build btest
-  tests-header.c- Used to build btest
 dlc*            - Rule checking compiler binary (data lab compiler)
-driver.pl*      - Driver program that uses btest and dlc to autograde bits.c
+driver.pl*      - Driver program that uses dlc to autograde bits.c
 fshow.c         - Utility for examining floating-point representations
 ishow.c         - Utility for examining integer representations
-
-NOTE: You can ignore btest.c and the four files used to check it.
 
 
 ************
@@ -95,8 +88,8 @@ Step 2: Type the following in the current directory:
 The Makefile generates compiles the bits.c files & builds the dlc binary
 (if necessary). Please ignore any warnings from btest.c at this stage.
 
-Step 3: You can check correctness of your bits.c by writing another C file and including
-bits.c and checking the answers.
+Step 3: You can check correctness of your bits.c by writing debug prints in the main()
+function and checking the answers.
 
 Step 4: Last step is to check if you adhere to the guidelines. 
 
