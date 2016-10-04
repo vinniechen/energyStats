@@ -1,0 +1,25 @@
+***********************
+The CSE30 Data Representation Lab
+Directions to Students
+***********************
+
+Your goal is to modify your copy of bits.c so that it passes all the
+tests in btest without violating any of the coding guidelines.
+
+
+***********************************************************
+Modifying bits.c and checking it for compliance with dlc
+***********************************************************
+
+Carefully read the instructions in the bits.c file before
+you start. These give the coding rules that you will need to follow if
+you want full credit.
+
+Make sure it passes the dlc test. (Ignore warnings of header files)
+dlc will flag if there is a coding guideline violation.
+
+You will turn in bits.c to gradescope.
+
+
+
+

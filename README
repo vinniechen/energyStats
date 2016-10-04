@@ -1,0 +1,124 @@
+#####################################################################
+# CSE30 Data Representation Lab
+# README
+# Copyright (c) 2002-2016, R. Bryant and D. O'Hallaron
+######################################################################
+
+This lab tests the  student's understanding of bit
+representations, two's complement arithmetic, and IEEE floating point.
+
+System requirements: Raspbian OS with ARM GCC compiler (comes built-in) 
+Can work on both emulation and hardware platforms.
+
+
+*********
+0. Files:
+*********
+
+Makefile        - Makes btest, fshow, and ishow
+README          - This file
+bits.c          - The file you will be modifying and handing in
+bits.h          - Header file
+btest.c         - The main btest program
+  btest.h       - Used to build btest
+  decl.c        - Used to build btest
+  tests.c       - Used to build btest
+  tests-header.c- Used to build btest
+dlc*            - Rule checking compiler binary (data lab compiler)
+driver.pl*      - Driver program that uses btest and dlc to autograde bits.c
+fshow.c         - Utility for examining floating-point representations
+ishow.c         - Utility for examining integer representations
+
+NOTE: You can ignore btest.c and the four files used to check it.
+
+
+************
+1. Overview
+************
+
+In this lab, you will work on a C file, called bits.c, that consists
+of 15 programming "puzzles".  Each puzzle is an empty
+function body that must be completed so that it implements a specified
+mathematical function, such as "absolute value". Students must solve
+the non-floating point puzzles using only straight-line C code and a
+restricted set of C arithmetic and logical operators. For the
+floating-point puzzles they can use conditionals and arbitrary
+operators.
+
+Along with it, we have also supplied the a compiler called datalab 
+compiler, or dlc that checks each function in bits.c for
+compliance with the coding guidelines, checks for the  use of
+less than the maximum number of operators, checks for straight-line code, 
+and for using legal operators.
+
+
+*******************
+2. Helper Programs
+*******************
+
+
+We have included the ishow and fshow programs to help you decipher
+integer and floating point representations respectively. Each takes a
+single decimal or hex number as an argument. To build them type:
+
+    unix> make
+
+Example usages:
+
+    unix> ./ishow 0x27
+    Hex = 0x00000027,   Signed = 39,    Unsigned = 39
+
+    unix> ./ishow 27
+    Hex = 0x0000001b,   Signed = 27,    Unsigned = 27
+
+    unix> ./fshow 0x15213243
+    Floating point value 3.255334057e-26
+    Bit Representation 0x15213243, sign = 0, exponent = 0x2a, fraction = 0x213243
+    Normalized.  +1.2593463659 X 2^(-85)
+
+    linux> ./fshow 15213243
+    Floating point value 2.131829405e-38
+    Bit Representation 0x00e822bb, sign = 0, exponent = 0x01, fraction = 0x6822bb
+    Normalized.  +1.8135598898 X 2^(-126)
+
+
+********************
+3. Building the Lab
+*******************
+
+Step 1: Make necessary changes in bits.c
+
+Step 2: Type the following in the current directory:
+     unix> make clean
+     unix> make 
+
+The Makefile generates compiles the bits.c files & builds the dlc binary
+(if necessary). Please ignore any warnings from btest.c at this stage.
+
+Step 3: You can check correctness of your bits.c by writing another C file and including
+bits.c and checking the answers.
+
+Step 4: Last step is to check if you adhere to the guidelines. 
+
+Use the dlc compiler (./dlc) to automatically check your version of
+bits.c for compliance with the coding guidelines:
+
+       unix> ./dlc bits.c
+
+dlc returns silently if there are no problems with your code.
+Otherwise it prints messages that flag any problems.  Running dlc with
+the -e switch:
+
+        unix> ./dlc -e bits.c
+
+causes dlc to print counts of the number of operators used by each function.
+
+******************
+4. Grading the Lab
+******************
+
+You will need to submit the file bits.c via gradscope where it will be
+autograded. Passing the tests of correctness and dlc will give you
+full credits for the lab.
+
+
