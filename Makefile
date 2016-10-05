@@ -2,10 +2,12 @@
 # Makefile that builds btest and other helper programs for the CSE30 Data Representation lab
 # 
 CC = gcc
-CFLAGS = -O -Wall
+CFLAGS = -O -Wall -g
 LIBS = -lm
 
-all: bits fshow ishow
+all: bits bits_ARM fshow ishow
+
+bits_ARM: bits_ARM.s bits_ARM.h test_bits_ARM.c 
 
 bits: bits.c  bits.h test_bits.c
 	$(CC) $(CFLAGS) $(LIBS) -o bits bits.c test_bits.c
@@ -21,6 +23,6 @@ btestexplicit:
 	$(CC) $(CFLAGS) $(LIBS) -o bits bits.c
 
 clean:
-	rm -f *.o bits fshow ishow *~
+	rm -f *.o bits bits_ARM fshow ishow *~
 
 

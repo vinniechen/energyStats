@@ -17,8 +17,12 @@ Can work on both emulation and hardware platforms.
 
 Makefile        - Makes bits, fshow, and ishow
 README          - This file
-bits.c          - The file you will be modifying and handing in
-bits.h          - Header file
+bits.c          - The C file you will be modifying and handing in
+bits.h          - Header file for bits.c
+test_bits.c     - Add your test cases for bits.c, a few tests provided 
+bits_ARM.s      - The Assembly file you will be modifying and handing in
+bits_ARM.h      - Header file for testing the Assembly code
+test_bits_ARM.c - Add your test cases for bits_ARM.s 
 dlc*            - Rule checking compiler binary (data lab compiler)
 driver.pl*      - Driver program that uses dlc to autograde bits.c
 fshow.c         - Utility for examining floating-point representations
@@ -36,13 +40,20 @@ mathematical function, such as "absolute value". Students must solve
 the non-floating point puzzles using only straight-line C code and a
 restricted set of C arithmetic and logical operators. For the
 floating-point puzzles they can use conditionals and arbitrary
-operators.
+operators. We have asked that you translate a subset of your non-floating point 
+C functions to ARM assembly, however we are not imposing the same constraints
+as we have on C code . The ARM assembly code should be straight-line (no loops)
+
 
 Along with it, we have also supplied the a compiler called datalab 
 compiler, or dlc that checks each function in bits.c for
 compliance with the coding guidelines, checks for the  use of
 less than the maximum number of operators, checks for straight-line code, 
-and for using legal operators.
+and for using legal operators. You may use this with your C implementation
+
+
+You must check for the correctness of your C and Assembly code by completing
+and adding to the test cases provided in test_bits.c and test_bits_ARM.c
 
 
 *******************
@@ -110,8 +121,12 @@ causes dlc to print counts of the number of operators used by each function.
 4. Grading the Lab
 ******************
 
-You will need to submit the file bits.c via gradscope where it will be
-autograded. Passing the tests of correctness and dlc will give you
-full credits for the lab.
+You will need to submit all the files by pushing your code to your github repo
+You also need to submit the files bits.c and bits_ARM.s via gradscope where it will be
+autograded. The gradescope autograder only checks for logical correctness of
+your bits.c and bits_ARM.s files. The dlc checker will be run on your code
+after the submission deadline. Passing the tests of correctness for bits.c and
+bits_ARM.c and dlc for ONLY bits.c will give you
+full credit for the lab.
 
 

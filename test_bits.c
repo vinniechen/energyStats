@@ -60,6 +60,7 @@ unsigned f2u(float f) {
 /* wchar_t uses ISO/IEC 10646 (2nd ed., published 2011-03-15) /
    Unicode 6.0.  */
 /* We do not support C11 <threads.h>.  */
+
 int test_bitAnd(int x, int y)
 {
   return x&y;
