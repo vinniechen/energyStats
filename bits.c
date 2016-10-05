@@ -112,8 +112,9 @@ NOTES:
      that you are allowed to use for your implementation of the function. 
      The max operator count is checked by dlc. Note that '=' is not 
      counted; you may use as many of these as you want without penalty.
-  3. Use the btest test harness to check your functions for correctness.
-  4. Use the BDD checker to formally verify your functions
+  3. Use the gradescope autograder and your own tester to check your functions for correctness.
+  4. Use the dlc program to check if your functions meet the constraints on the
+     maximum number of ops and permissible operators.
   5. The maximum number of ops for each function is given in the
      header comment for each function. If there are any inconsistencies 
      between the maximum ops in the writeup and in this file, consider
@@ -125,8 +126,7 @@ NOTES:
  *   IMPORTANT. TO AVOID GRADING SURPRISES:
  *   1. Use the dlc compiler to check that your solutions conform
  *      to the coding rules.
- *   2. Use the BDD checker to formally verify that your solutions produce 
- *      the correct answers.
+ *   2. Use the gradescope autograder to check for logical correctness 
  */
 
 
@@ -249,6 +249,8 @@ int divpwr2(int x, int n) {
 }
 /* 
  * negate - return -x 
+ * You may handle results that fall out of signed int range in any way that you
+ * like
  *   Example: negate(1) = -1.
  *   Legal ops: ! ~ & ^ | + << >>
  *   Max ops: 5
