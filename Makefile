@@ -7,8 +7,8 @@ LIBS = -lm
 
 all: bits fshow ishow
 
-bits: bits.c  bits.h
-	$(CC) $(CFLAGS) $(LIBS) -o bits bits.c
+bits: bits.c  bits.h test_bits.c
+	$(CC) $(CFLAGS) $(LIBS) -o bits bits.c test_bits.c
 
 fshow: fshow.c
 	$(CC) $(CFLAGS) -o fshow fshow.c

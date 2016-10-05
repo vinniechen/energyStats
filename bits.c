@@ -328,8 +328,3 @@ unsigned float_twice(unsigned uf) {
   return 2;
 }
 
-
-int main(int argc, char* argv[]){
-
-return 0;
-}
