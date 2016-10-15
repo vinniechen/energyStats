@@ -303,7 +303,7 @@ int ilog2(int x) {
  *   Rating: 2
  */
 unsigned float_neg(unsigned uf) {
- if ( !((uf & 0x007FFFFF) || (0x75800000 & (~uf)))) 
+ if ( (!(uf & 0x007FFFFF) || (0x75800000 & (~uf)))) 
      uf = uf ^ (1 << 31);
  return uf;
 }
