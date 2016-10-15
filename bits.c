@@ -248,7 +248,7 @@ int fitsBits(int x, int n) {
  *   Rating: 2
  */
 int divpwr2(int x, int n) {
-    int clear = ~(1<<n);
+    int clear = ~0 + (1<<n);
     int extraNeg = (x >> 31) & 1;
     return (x + extraNeg) >> n & clear;
 }
