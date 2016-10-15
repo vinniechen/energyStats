@@ -1,0 +1,132 @@
+#####################################################################
+# CSE30 Data Representation Lab
+# README
+# Copyright (c) 2002-2016, R. Bryant and D. O'Hallaron
+######################################################################
+
+This lab tests the  student's understanding of bit
+representations, two's complement arithmetic, and IEEE floating point.
+
+System requirements: Raspbian OS with ARM GCC compiler (comes built-in) 
+Can work on both emulation and hardware platforms.
+
+
+*********
+0. Files:
+*********
+
+Makefile        - Makes bits, fshow, and ishow
+README          - This file
+bits.c          - The C file you will be modifying and handing in
+bits.h          - Header file for bits.c
+test_bits.c     - Add your test cases for bits.c, a few tests provided 
+bits_ARM.s      - The Assembly file you will be modifying and handing in
+bits_ARM.h      - Header file for testing the Assembly code
+test_bits_ARM.c - Add your test cases for bits_ARM.s 
+dlc*            - Rule checking compiler binary (data lab compiler)
+driver.pl*      - Driver program that uses dlc to autograde bits.c
+fshow.c         - Utility for examining floating-point representations
+ishow.c         - Utility for examining integer representations
+
+
+************
+1. Overview
+************
+
+In this lab, you will work on a C file, called bits.c, that consists
+of 15 programming "puzzles".  Each puzzle is an empty
+function body that must be completed so that it implements a specified
+mathematical function, such as "absolute value". Students must solve
+the non-floating point puzzles using only straight-line C code and a
+restricted set of C arithmetic and logical operators. For the
+floating-point puzzles they can use conditionals and arbitrary
+operators. We have asked that you translate a subset of your non-floating point 
+C functions to ARM assembly, however we are not imposing the same constraints
+as we have on C code . The ARM assembly code should be straight-line (no loops)
+
+
+Along with it, we have also supplied the a compiler called datalab 
+compiler, or dlc that checks each function in bits.c for
+compliance with the coding guidelines, checks for the  use of
+less than the maximum number of operators, checks for straight-line code, 
+and for using legal operators. You may use this with your C implementation
+
+
+You must check for the correctness of your C and Assembly code by completing
+and adding to the test cases provided in test_bits.c and test_bits_ARM.c
+
+
+*******************
+2. Helper Programs
+*******************
+
+
+We have included the ishow and fshow programs to help you decipher
+integer and floating point representations respectively. Each takes a
+single decimal or hex number as an argument. To build them type:
+
+    unix> make
+
+Example usages:
+
+    unix> ./ishow 0x27
+    Hex = 0x00000027,   Signed = 39,    Unsigned = 39
+
+    unix> ./ishow 27
+    Hex = 0x0000001b,   Signed = 27,    Unsigned = 27
+
+    unix> ./fshow 0x15213243
+    Floating point value 3.255334057e-26
+    Bit Representation 0x15213243, sign = 0, exponent = 0x2a, fraction = 0x213243
+    Normalized.  +1.2593463659 X 2^(-85)
+
+    linux> ./fshow 15213243
+    Floating point value 2.131829405e-38
+    Bit Representation 0x00e822bb, sign = 0, exponent = 0x01, fraction = 0x6822bb
+    Normalized.  +1.8135598898 X 2^(-126)
+
+
+********************
+3. Building the Lab
+*******************
+
+Step 1: Make necessary changes in bits.c
+
+Step 2: Type the following in the current directory:
+     unix> make clean
+     unix> make 
+
+The Makefile generates compiles the bits.c files & builds the dlc binary
+(if necessary). Please ignore any warnings from btest.c at this stage.
+
+Step 3: You can check correctness of your bits.c by writing debug prints in the main()
+function and checking the answers.
+
+Step 4: Last step is to check if you adhere to the guidelines. 
+
+Use the dlc compiler (./dlc) to automatically check your version of
+bits.c for compliance with the coding guidelines:
+
+       unix> ./dlc bits.c
+
+dlc returns silently if there are no problems with your code.
+Otherwise it prints messages that flag any problems.  Running dlc with
+the -e switch:
+
+        unix> ./dlc -e bits.c
+
+causes dlc to print counts of the number of operators used by each function.
+
+******************
+4. Grading the Lab
+******************
+
+You will need to submit all the files by pushing your code to your github repo
+You also need to submit the files bits.c and bits_ARM.s via gradscope where it will be
+autograded. The gradescope autograder only checks for logical correctness of
+your bits.c and bits_ARM.s files. The dlc checker will be run on your code
+after the submission deadline. Passing the tests of correctness for bits.c and
+bits_ARM.c and dlc for ONLY bits.c will give you
+full credit for the lab.
+
+
