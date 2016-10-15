@@ -365,6 +365,24 @@ unsigned float_i2f(int x) {
  *   Rating: 4
  */
 unsigned float_twice(unsigned uf) {
-  return 2;
+  unsigned SignOfFloat = uf;
+  unsigned ExponentOfFloat = uf;
+  unsigned MantissaOfFloat = uf;
+
+  SignOfFloat = SignOfFloat >> 31 << 31;
+  ExponentOfFloat = (ExponentOfFloat >> 23) & 0xFF;
+  MantissaOfFloat = MantissaOfFloat & 0x007FFFFF;
+  
+  if (ExponentOfFloat == 0xF800000 || (MantissaOfFloat = 0 && ExponentOfFloat == 0) {
+     return uf;
+  }
+     
+  else {
+     
+     ExponentOfFloat = (ExponentOfFloat + (1 << 23));
+  }
+        
+  return ((SignOfFloat) | (ExponentOfFloat) | (MantissaOfFloat));
+
 }
 
