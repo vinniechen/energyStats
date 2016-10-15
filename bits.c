@@ -373,16 +373,11 @@ unsigned float_twice(unsigned uf) {
   ExponentOfFloat = (ExponentOfFloat >> 23) & 0xFF;
   MantissaOfFloat = MantissaOfFloat & 0x007FFFFF;
   
-  if (ExponentOfFloat == 0xF800000 || (MantissaOfFloat = 0 && ExponentOfFloat == 0) {
-     return uf;
-  }
-     
-  else {
-     
+  if (ExponentOfFloat == 0xF800000 || (MantissaOfFloat = 0 && ExponentOfFloat == 0)) 
+     return uf;   
+  else 
      ExponentOfFloat = (ExponentOfFloat + (1 << 23));
-  }
-        
+  
   return ((SignOfFloat) | (ExponentOfFloat) | (MantissaOfFloat));
-
 }
 
