@@ -213,7 +213,8 @@ int bitCount(int x) {
  *   Rating: 4 
  */
 int bang(int x) {
-  return (((~x + 1) ^ x) >> 31) & (~0 - 1);
+ return ~(((~x + 1) | x ) >> 31) & 0x01;
+ // return (((~x + 1) ^ x) >> 31) & (~0 - 1);
   //return (~(( ~(x) ^ x) >> 31)) & ~((~0)-1);
   
 }
