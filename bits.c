@@ -294,32 +294,32 @@ int isLessOrEqual(int x, int y) {
 int ilog2(int x) {
    int search = x >> 16;
    int checkMSB = (!!(search))<<31;   
-   checkMSB = checkMSB >> 31
+   checkMSB = checkMSB >> 31;
    x = x >> (checkMSB & 16);
    int result = 0;
    result = result + (checkMSB & 16);
 
    search = x >> 8;
    checkMSB = (!!(search))<<31;
-   checkMSB = checkMSB >> 31
+   checkMSB = checkMSB >> 31;
    x = x >> (checkMSB & 8);
    result = result + (checkMSB & 8);
 
    search = x >> 4;
    checkMSB = (!!(search))<<31;
-   checkMSB = checkMSB >> 31
+   checkMSB = checkMSB >> 31;
    x = x >> (checkMSB & 4);
    result = result + (checkMSB & 4);
 
    search = x >> 2;
    checkMSB = (!!(search))<<31;
-   checkMSB = checkMSB >> 31
+   checkMSB = checkMSB >> 31;
    x = x >> (checkMSB & 2);
    result = result + (checkMSB & 2);
    
    search = x >> 1;
    checkMSB = (!!(search))<<31;
-   checkMSB = checkMSB >> 31
+   checkMSB = checkMSB >> 31;
    result = result + (checkMSB & 1);
    
 return result;
