@@ -236,7 +236,7 @@ int tmin(void) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-  return ! ((( (1 << 31) >> (32 + ~n)) & x) & x);
+  return !(! ((( (1 << 31) >> (32 + ~n)) & x) & x));
 }
 /* 
  * divpwr2 - Compute x/(2^n), for 0 <= n <= 30
