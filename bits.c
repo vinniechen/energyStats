@@ -213,7 +213,8 @@ int bitCount(int x) {
  *   Rating: 4 
  */
 int bang(int x) {
-  return (((~x + 1) ^ x) >> 31) & (~0 - 1);
+ return ~(((~x + 1) | x ) >> 31) & 0x01;
+ // return (((~x + 1) ^ x) >> 31) & (~0 - 1);
   //return (~(( ~(x) ^ x) >> 31)) & ~((~0)-1);
   
 }
@@ -247,7 +248,9 @@ int fitsBits(int x, int n) {
  *   Rating: 2
  */
 int divpwr2(int x, int n) {
-    return 2;
+    int clear = ~0 + (1<<n);
+    int extraNeg = (x >> 31) & 1;
+    return (x + extraNeg) >> n & clear;
 }
 /* 
  * negate - return -x 
@@ -289,7 +292,38 @@ int isLessOrEqual(int x, int y) {
  *   Rating: 4
  */
 int ilog2(int x) {
-  return 2;
+   int search = x >> 16;
+   int checkMSB = (!!(search))<<31;   
+   checkMSB = checkMSB >> 31;
+   x = x >> (checkMSB & 16);
+   int result = 0;
+   result = result + (checkMSB & 16);
+
+   search = x >> 8;
+   checkMSB = (!!(search))<<31;
+   checkMSB = checkMSB >> 31;
+   x = x >> (checkMSB & 8);
+   result = result + (checkMSB & 8);
+
+   search = x >> 4;
+   checkMSB = (!!(search))<<31;
+   checkMSB = checkMSB >> 31;
+   x = x >> (checkMSB & 4);
+   result = result + (checkMSB & 4);
+
+   search = x >> 2;
+   checkMSB = (!!(search))<<31;
+   checkMSB = checkMSB >> 31;
+   x = x >> (checkMSB & 2);
+   result = result + (checkMSB & 2);
+   
+   search = x >> 1;
+   checkMSB = (!!(search))<<31;
+   checkMSB = checkMSB >> 31;
+   result = result + (checkMSB & 1);
+   
+return result;
+
 }
 /* 
  * float_neg - Return bit-level equivalent of expression -f for
@@ -331,6 +365,19 @@ unsigned float_i2f(int x) {
  *   Rating: 4
  */
 unsigned float_twice(unsigned uf) {
-  return 2;
+  unsigned SignOfFloat = uf;
+  unsigned ExponentOfFloat = uf;
+  unsigned MantissaOfFloat = uf;
+
+  SignOfFloat = SignOfFloat >> 31 << 31;
+  ExponentOfFloat = (ExponentOfFloat >> 23) & 0xFF;
+  MantissaOfFloat = MantissaOfFloat & 0x007FFFFF;
+  
+  if (ExponentOfFloat == 0xF800000 || (MantissaOfFloat = 0 && ExponentOfFloat == 0)) 
+     return uf;   
+  else 
+     ExponentOfFloat = (ExponentOfFloat + (1 << 23));
+  
+  return ((SignOfFloat) | (ExponentOfFloat) | (MantissaOfFloat));
 }
 
