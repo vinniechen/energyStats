@@ -166,7 +166,24 @@ assert(bitAnd(1,3)==test_bitAnd(1,3));
 assert(bitAnd(9,8)==test_bitAnd(9,8));
 assert(bitAnd(0,6)==test_bitAnd(0,6));
 assert(bitAnd(255,254)==test_bitAnd(255,254));
-printf("Passed Test Cases for bitAnd\n");
+printf("Passed bitAnd\n");
+
+assert(getByte(0x12345678, 1) == test_getByte(0x12345678, 1));
+printf("Passed getByte\n");
+
+assert(logicalShift(0x87654321, 4) == 0x08765432);
+printf("Passed logicalShift\n");
+
+// assert(bitCount(5) == test_bitCount(5));
+// assert(bitCount(7) == test_bitCount(7));
+// printf("Passed bitCount\n");
+
+assert(bang(3) == test_bang(3));
+assert(bang(0) == test_bang(0));
+printf("Passed bang");
+
+assert(tmin() == test_tmin());
+printf("Pased tmin");
 
 return 0;
 

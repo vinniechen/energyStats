@@ -171,7 +171,7 @@ NOTES:
  *   Rating: 1
  */
 int bitAnd(int x, int y) {
-  return 2;
+  return ~(~x | ~y);
 }
 /* 
  * getByte - Extract byte n from word x
@@ -182,7 +182,7 @@ int bitAnd(int x, int y) {
  *   Rating: 2
  */
 int getByte(int x, int n) {
-  return 2;
+  return (((0xFF << (n << 3)) & x ) >> (n << 3));
 }
 /* 
  * logicalShift - shift x to the right by n, using a logical shift
@@ -193,7 +193,7 @@ int getByte(int x, int n) {
  *   Rating: 3 
  */
 int logicalShift(int x, int n) {
-  return 2;
+  return (( x >> n) & ~(( (~0) << (32 + (~n+1)))));
 }
 /*
  * bitCount - returns count of number of 1's in word
@@ -213,7 +213,9 @@ int bitCount(int x) {
  *   Rating: 4 
  */
 int bang(int x) {
-  return 2;
+  return (((~x + 1) ^ x) >> 31) & (~0 - 1);
+  //return (~(( ~(x) ^ x) >> 31)) & ~((~0)-1);
+  
 }
 /* 
  * tmin - return minimum two's complement integer 
@@ -222,7 +224,7 @@ int bang(int x) {
  *   Rating: 1
  */
 int tmin(void) {
-  return 2;
+  return 1 << 31;
 }
 /* 
  * fitsBits - return 1 if x can be represented as an 
@@ -234,7 +236,7 @@ int tmin(void) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-  return 2;
+  return ! ((( (1 << 31) >> (32 + ~n)) & x) & x);
 }
 /* 
  * divpwr2 - Compute x/(2^n), for 0 <= n <= 30
@@ -257,7 +259,7 @@ int divpwr2(int x, int n) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  return (~x) + 1;
 }
 /* 
  * isPositive - return 1 if x > 0, return 0 otherwise 
@@ -267,7 +269,7 @@ int negate(int x) {
  *   Rating: 3
  */
 int isPositive(int x) {
-  return 2;
+  return ! ((x >> 31) | (!x));
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -277,7 +279,7 @@ int isPositive(int x) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-  return 2;
+  return ~(((~x + 1) + y) >> 31 ) & 1 ;
 }
 /*
  * ilog2 - return floor(log base 2 of x), where x > 0
@@ -301,7 +303,9 @@ int ilog2(int x) {
  *   Rating: 2
  */
 unsigned float_neg(unsigned uf) {
- return 2;
+ if ( !((uf & 0x007FFFFF) || (0x75800000 & (~uf)))) 
+     uf = uf ^ (1 << 31);
+ return uf;
 }
 /* 
  * float_i2f - Return bit-level equivalent of expression (float) x
