@@ -10,6 +10,22 @@ h1 {
     background-color: rgba(0, 200, 255, 0.4);
 }
 
-#monthSelect {
+#leftButton {
+    position: absolute;
+    top: 40%;
+    left: 5px;
+}
+
+#rightButton {
+    position: absolute;
+    top: 40%;
+    right: 5px;
+}
+
+#itemSelection {
     text-align: center;
+}
+
+#crazyBreak {
+    height: 500px;
 }
