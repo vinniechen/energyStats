@@ -31,9 +31,10 @@ h1 {
 }
 
 ul {
-    margin-left: -30px;
+    margin-left: -20px;
     list-style-type: none;
 }
 li {
     display: inline;
+    margin-right: 20px;
 }
