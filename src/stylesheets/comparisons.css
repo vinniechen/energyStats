@@ -12,13 +12,13 @@ h1 {
 
 #leftButton {
     position: fixed;
-    top: 50%;
+    top: 65%;
     left: 5px;
 }
 
 #rightButton {
     position: fixed;
-    top: 50%;
+    top: 65%;
     right: 5px;
 }
 
