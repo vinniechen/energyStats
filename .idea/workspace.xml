@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="414d079e-602f-46db-868c-da7173682ee0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stylesheets/comparisons.css" afterPath="$PROJECT_DIR$/src/stylesheets/comparisons.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/comparisons.html" afterPath="$PROJECT_DIR$/src/comparisons.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="energyStats.iws" />
@@ -25,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="comparisons.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="comparisons.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/comparisons.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51079136">
+            <state vertical-scroll-proportion="-10.923077">
               <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comparisons.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="comparisons.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stylesheets/comparisons.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.23367697">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -424,18 +423,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stylesheets/comparisons.css">
+    <entry file="file://$PROJECT_DIR$/src/comparisons.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state vertical-scroll-proportion="-10.923077">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/comparisons.html">
+    <entry file="file://$PROJECT_DIR$/src/stylesheets/comparisons.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51079136">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.23367697">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
         </state>
       </provider>

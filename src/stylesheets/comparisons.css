@@ -5,20 +5,20 @@ h1 {
 
 #backgroundTab {
     padding: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 3%;
+    margin-right: 3%;
     background-color: rgba(0, 200, 255, 0.4);
 }
 
 #leftButton {
     position: absolute;
-    top: 40%;
+    top: 40px;
     left: 5px;
 }
 
 #rightButton {
     position: absolute;
-    top: 40%;
+    top: 40px;
     right: 5px;
 }
 
