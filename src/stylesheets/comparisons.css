@@ -1,0 +1,15 @@
+h1 {
+	color: navy;
+	margin-left: 10px;
+}
+
+#backgroundTab {
+    padding: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: rgba(0, 200, 255, 0.4);
+}
+
+#monthSelect {
+    text-align: center;
+}

@@ -1,37 +1,45 @@
 <html>
-  <head>
-  	<!--Boostrap Nav Bar-->
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <head>
+        <!--Boostrap Nav Bar-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheets/comparisons.css">
+
+        <title>energyStats - Comparisons</title>
+
+    </head>
   
-   	 <title>energyStats - Comparisons</title>
-  </head>
-  
-  <body>
+    <body>
 
-  	<!--Boostrap Nav Bar-->
-  	<nav class="navbar navbar-default">
- 		<div class="container-fluid">
-    			<div class="navbar-header">
-      				<a class="navbar-brand" href="">Energy Stats</a>
-    			</div>
-    			<ul class="nav navbar-nav">
-      				<li class="active"><a href="signin.html">Login</a></li>
-     				<li><a href="comparisons.html">Comparison</a></li>
-      				<li><a href="progress.html">Progress</a></li>
-      				<li><a href="highlights.html">Tips</a></li>
-    			</ul>
-  		</div>
-	</nav>
+        <!--Boostrap Nav Bar-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="">Energy Stats</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="signin.html">Login</a></li>
+                        <li><a href="comparisons.html">Comparison</a></li>
+                        <li><a href="progress.html">Progress</a></li>
+                        <li><a href="highlights.html">Tips</a></li>
+                    </ul>
+            </div>
+        </nav>
 
 
-    <h1> Evaluation </h1>
-	  
-    <br/>
-    <hr/>
-    <a href = "progress.html">Proceed to personal <br/> progress evaluation</a>
-  </body>
+        <h1> Evaluation </h1>
+        <div id = "backgroundTab">
+            <div id = "monthSelect"><select>
+                <option value = "Current">October (Current)</option>
+                <option value = "September">September</option>
+            </select></div>
+        </div>
+
+        <br/>
+        <hr/>
+        <a href = "progress.html">Proceed to personal <br/> progress evaluation</a>
+    </body>
 </html>
