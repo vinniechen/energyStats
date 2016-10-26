@@ -31,14 +31,28 @@
 
 
         <h1> Evaluation </h1>
-        <button type = "button" id = "leftButton"><-</button>
-        <button type = "button" id = "rightButton">-></button>
+        <button type = "button" id = "leftButton"><</button>
+        <button type = "button" id = "rightButton">></button>
+
 
         <div id = "backgroundTab">
-            <div id = "itemSelection"><select>
-                <option value = "Current">October (Current)</option>
-                <option value = "September">September</option>
-            </select></div>
+            <div id = "itemSelection">
+                <ul>
+                    <li>
+                        <input type = "checkbox" name = "placeShow" value = "You">You
+                    </li>
+                    <li>
+                        <input type = "checkbox" name = "placeShow" value = "City">City
+                    </li>
+                    <li>
+                        <input type = "checkbox" name = "placeShow" value = "State">State
+                    </li>
+                </ul>
+                <select>
+                    <option value = "Current">October (Current)</option>
+                    <option value = "September">September</option>
+                </select>
+            </div>
 
             <div id = "crazyBreak"></div>
         </div>
