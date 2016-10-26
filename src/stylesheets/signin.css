@@ -1,0 +1,17 @@
+#mainStuff {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+#mainStuff form input {
+    height:200px;
+    width:400px;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(0, 230, 0);
+}
