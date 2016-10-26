@@ -30,7 +30,7 @@ h1 {
     height: 500px;
 }
 
-ul {
+#itemSelection ul {
     margin-left: -20px;
     list-style-type: none;
 }
