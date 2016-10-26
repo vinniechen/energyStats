@@ -11,14 +11,14 @@ h1 {
 }
 
 #leftButton {
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    top: 50%;
     left: 5px;
 }
 
 #rightButton {
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    top: 50%;
     right: 5px;
 }
 
