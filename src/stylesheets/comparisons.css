@@ -129,6 +129,7 @@ body, html {
     margin-left: 5%;
     margin-right: 5%;
     background-color: rgba(0, 200, 255, 0.4);
+    text-align: center;
 }
 
 #leftButton {
