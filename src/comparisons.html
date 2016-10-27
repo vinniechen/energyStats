@@ -35,14 +35,15 @@
         <button type = "button" id = "rightButton">></button>
 
 
+
         <div id = "backgroundTab">
             <div id = "itemSelection">
                 <ul>
                     <li>
-                        <input type = "checkbox" name = "placeShow" value = "You">You
+                        <input type = "checkbox" name = "placeShow" value = "You" checked>You
                     </li>
                     <li>
-                        <input type = "checkbox" name = "placeShow" value = "City">City
+                        <input type = "checkbox" name = "placeShow" value = "City" checked>City
                     </li>
                     <li>
                         <input type = "checkbox" name = "placeShow" value = "State">State
@@ -54,9 +55,43 @@
                 </select>
             </div>
 
+        <table id="graph">
+        <thead>
+            <tr>
+            <th></th>
+            <th class="personal">Your Usage</th>
+            <th class="city">City's Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="utility" id="electricity">
+            <th scope="row">Electricity</th>
+            <td class="personal bar" style="height: 164px;"><p>$82.41</p></td>
+            <td class="city bar" style="height: 132px;"><p>$66.39</p></td>
+            </tr>
+        
+            <tr class="utility" id="water">
+            <th scope="row">Water</th>
+            <td class="personal bar" style="height: 168px;"><p>$84.12</p></td>
+            <td class="city bar" style="height: 200px;"><p>$99.76</p></td>
+            </tr>
+        
+            <tr class="utility" id="gas">
+            <th scope="row">Gas</th>
+            <td class="personal bar" style="height: 67px;"><p>$33.64</p></td>
+            <td class="city bar" style="height: 76px;"><p>$38.11</p></td>
+            </tr>
+
+
+        </tbody>
+        </table>
+
             <div id = "crazyBreak"></div>
         </div>
 
+
+
+        
         <br/>
         <hr/>
         <a href = "progress.html">Proceed to personal <br/> progress evaluation</a>
