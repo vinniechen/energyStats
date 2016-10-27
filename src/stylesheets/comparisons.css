@@ -17,6 +17,8 @@ body, html {
 	display: inline-block;
 	text-align: center;
 	border-radius: 10px;
+	margin-top: 15px;
+	margin-bottom:5px;
 }
 
 /*graph attributes*/
