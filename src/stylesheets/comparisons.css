@@ -16,7 +16,7 @@ body, html {
 	background: white;
 	display: inline-block;
 	text-align: center;
-	border-radius: 4px;
+	border-radius: 10px;
 }
 
 /*graph attributes*/
@@ -130,7 +130,7 @@ body, html {
     margin-right: 5%;
     background-color: rgba(0, 200, 255, 0.4);
     text-align: center;
-    border-radius:2px;
+    border-radius:5px;
 }
 
 #leftButton {
