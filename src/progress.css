@@ -16,3 +16,12 @@ h3 {
 	margin-left: 30px;
 	
 }
+
+#curve_chart {
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#itemselection {
+	text-align: center;
+}

@@ -1,14 +1,43 @@
 <html>
 	
 	<head>
-  <title>Bootstrap Case</title>
+  <title>energyStats - Progress</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--google charts open source. will ask Calvin later-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
-<link rel="stylesheet" type="text/css" href="progress.css">
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Bill (in $)'],
+          ['June',  100],
+          ['July',  117],
+          ['August',  66],
+          ['September',  103],
+          ['October',  66],
+        ]);
+
+        var options = {
+          title: 'Overall Bill',
+          curveType: '',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+  <link rel="stylesheet" href="progress.css">
+  </head>
+
 	<title> Progress </title>
 <body>
 
@@ -25,14 +54,22 @@
     </ul>
   </div>
 </nav>
-  
+
+
 
 		<h1> Progress </h1>
 			<p> Check your progress! </p>
-		<h3> Overall Bill </h3>
-		<h3> Water Usage </h3>
-		<h3> Electricity Usage </h3>
-		<h3> Gas Usage </h3>
+
+       <div id = "itemSelection">
+          <select>
+           <option value = "overall">Overall Bill</option>
+           <option value = "water">Water Usage</option>
+           <option value = "electricity">Electricity Usage</option>
+           <option value = "gas">Gas Usage</option>
+          </select>
+        </div>
+
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
 		<br/>
 		<hr/>
