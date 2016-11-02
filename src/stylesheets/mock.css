@@ -1,0 +1,25 @@
+
+div.bar {
+   display: inline-block;
+    width: 5%;
+    height: 75px;
+    background-color: green;
+    border-style: solid;
+    border-color: black;
+    margin-right: 5px;
+    border-width: 2px;
+}
+
+#graphCanvas {
+    padding: 15px;
+    background-color: rgb(200, 200, 200);
+}
+
+#graph {
+    padding: 10px;
+    border-style: none none solid solid;
+}
+
+span.graphSpace {
+    margin-right: 5%;
+}
