@@ -1,0 +1,100 @@
+
+ {
+   "tips": [
+     {
+       "type": "water",
+       "tip": "Limit your showers to less than 10 minutes by using a
+         shower timer"
+     }
+     {
+       "type": "water",
+       "tip": "Wash clothes in full loads to avoid wasting water"
+     }
+     {
+       "type": "water",
+       "tip": "Opt for water wise plants in your garden such as succulents
+         instead of plants that need to be constantly watered"
+     }
+     {
+       "type": "water",
+       "tip": "If there's a spike in your water bill, there may be a leak
+         somewhere in your house"
+     }
+     {
+       "type": "water",
+       "tip": "Fill your sink with water to hand wash dishes, instead of
+         letting the water run while you're scrubbing"
+     }
+     {
+       "type": "water",
+       "tip": "Water plants in the early morning so water evaporates less"
+     }
+     {
+       "type": "water",
+       "tip": "Choose efficient water fixtures (shower heads, faucets, etc.)"
+     }
+     {
+       "type": "electricity",
+       "tip": "Look for ENERGY STAR label on products that use energy
+         because they meet strict efficiency guidelines."
+     }
+     {
+       "type": "electricity",
+       "tip": "Plug home electronics such as TVs into power strips
+         and turn the power strips off when equipment not in use"
+     }
+     {
+       "type": "electricity",
+       "tip": "Change your lightbulbs to CFL bulbs, as they use 75%
+         less energy and last up to 10 times longer than traditional bulbs"
+     }
+     {
+       "type": "electricity",
+       "tip": "Keep curtains or shades open to use daylighting instead
+         of turning on lights"
+     }
+     {
+       "type": "electricity",
+       "tip": "Air dry your dishes. Most of the energy used by a dishwasher
+         is for water heating"
+     }
+     {
+       "type": "electricity",
+       "tip": "Look into smart appliances that can be connected to smart
+         electic meters or home energy management systems"
+     }
+     {
+       "type": "electricity",
+       "tip": "Keep your refrigerator 35-38 degrees Farenheight"
+     }
+     {
+       "type": "electricity",
+       "tip": "Cover liquids and wrap foods stored in the refrigerator, as
+         uncovered foods release moisture and make the compressor work harder"
+     }
+     {
+       "type": "electricity",
+       "tip": "Consider air drying clothes. Dryers use an average 1000 kwh/year"
+     }
+     {
+       "type": "electricity",
+       "tip": "Turn off and unplug appliances when they are not in use"
+     }
+     {
+       "type": "",
+       "tip": ""
+     }
+   ]
+}
+
+
+
+var gasTip = {
+    "tip0":{"Lower the thermostat on your water heater to 120 F"},
+    "tip1":{"Save as much as 10% a year on heating and cooling by
+      turning your thermostat back 7-10 F for 8 hours a day"},
+    "tip2":{"Close your curtains and shades facing the sun to keep your home
+      cool during the summer and reduce the need for air conditioning"},
+    "tip3":{"Wash clothes in cold water whenever possible"},
+
+}

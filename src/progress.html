@@ -1,13 +1,18 @@
 <html>
-	
+
 	<head>
+		<!--jquery-->
+		<script src="jquery-3.1.1.min.js"></script>
   <title>energyStats - Progress</title>
+	<!--d3 graph-->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<!--Boostrap Nav Bar-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <!--google charts open source. will ask Calvin later-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -17,7 +22,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Month', 'Bill (in $)'],
-          ['June',  180],
+          ['June',  180], //{{}} ?
           ['July',  240],
           ['August',  260],
           ['September',  210],
@@ -76,6 +81,6 @@
 		<hr/>
 		<a href = "comparisons.html">Return to comparisons</a>
 		<a href = "highlights.html">Proceed to highlights</a>
-	</body>	
+	</body>
 
 </html>
