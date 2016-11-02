@@ -26,8 +26,8 @@
                                 }, function(error, data) {
                                     if(error) throw error;
 
-                                    x.domain(data.map(function(d) {return d.letter;}));
-                                    y.domain([0, d3.max(data, function(d) {return d.frequency;})]);
+                                    x.domain(data.map(function(d) {return d.user;}));
+                                    y.domain([0, d3.max(data, function(d) {return d.bill;})]);
 
                                     g.append("g")
                                         .attr("class", "axis axis--x")
@@ -36,7 +36,7 @@
 
                                     g.append("g")
                                             .attr("class", "axis axis--y")
-                                            .call(d3.axisLeft(y).ticks(10, "dollars"))
+                                            .call(d3.axisLeft(y).ticks(10, "%"))
                                         .append("text")
                                             .attr("transform", "rotate(-90)")
                                             .attr("y", 6)

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="414d079e-602f-46db-868c-da7173682ee0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mock.html" afterPath="$PROJECT_DIR$/src/mock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="energyStats.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +37,8 @@
       <file leaf-file-name="mock.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mock.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12274368">
-              <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.4296029">
+              <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -589,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12274368">
-          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.4296029">
+          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
           <folding />
         </state>
       </provider>
