@@ -33,6 +33,7 @@
                 var options = {title: 'Energy Comparison',
                                 width: windowWidth - windowWidth/33 - 60,
                                 height: windowHeight - 200,
+                                backgroundColor: {fill: 'transparent'},
                                 vAxis: {format: 'currency'}};
                 var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
                 chart.draw(data, options);
