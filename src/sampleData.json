@@ -1,0 +1,16 @@
+{
+  "cols": [
+        {"id":"","label":"Topping","pattern":"","type":"string"},
+        {"id":"","label":"My Total","pattern":"","type":"number"}
+      ],
+  "rows": [
+        {"c":[{"v":"april","f":null},{"v":192,"f":null}]},
+        {"c":[{"v":"may","f":null},{"v":294,"f":null}]},
+        {"c":[{"v":"june","f":null},{"v":150,"f":null}]},
+        {"c":[{"v":"july","f":null},{"v":75,"f":null}]},
+        {"c":[{"v":"august","f":null},{"v":102,"f":null}]},
+        {"c":[{"v":"september","f":null},{"v":94,"f":null}]},
+        {"c":[{"v":"october","f":null},{"v":102,"f":null}]},
+        {"c":[{"v":"november","f":null},{"v":193,"f":null}]}
+      ]
+}

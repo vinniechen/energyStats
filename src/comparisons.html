@@ -1,5 +1,11 @@
 <html>
     <head>
+        <!--jquery-->
+        <script src="jquery-3.1.1.min.js"></script>
+
+        <!--d3 graph-->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
         <!--Boostrap Nav Bar-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,9 +51,8 @@
             }
         </script>
         <title>energyStats - Comparisons</title>
-
     </head>
-  
+
     <body>
 
         <!--Boostrap Nav Bar-->
@@ -57,8 +62,8 @@
                         <a class="navbar-brand" href="">Energy Stats</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="signin.html">Login</a></li>
-                        <li><a href="comparisons.html">Comparison</a></li>
+                        <li><a href="signin.html">Login</a></li>
+                        <li class="active"><a href="comparisons.html">Comparison</a></li>
                         <li><a href="progress.html">Progress</a></li>
                         <li><a href="highlights.html">Tips</a></li>
                     </ul>
@@ -67,19 +72,22 @@
 
 
         <h1> Evaluation </h1>
-        <button type = "button" id = "leftButton"><</button>
+        <button type = "button" id = "leftButton"></button>
         <button type = "button" id = "rightButton">></button>
 
 
+
         <div id = "backgroundTab">
-            <div id = "itemSelection">
                 <select>
                     <option value = "Current">October (Current)</option>
                     <option value = "September">September</option>
                 </select>
-            </div>
             <div id = "energy_div"></div>
         </div>
+
+
+
+
 
         <br/>
     </body>
