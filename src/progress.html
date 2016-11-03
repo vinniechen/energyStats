@@ -1,8 +1,9 @@
 <html>
 
 	<head>
-		<!--jquery-->
-		<script src="jquery-3.1.1.min.js"></script>
+
+	<!--jquery-->
+ <!-- <script src="jquery-3.1.1.min.js"></script> -->
   <title>energyStats - Progress</title>
 	<!--d3 graph-->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -19,26 +20,45 @@
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Month', 'Bill (in $)'],
-          ['June',  180], //{{}} ?
-          ['July',  240],
-          ['August',  260],
-          ['September',  210],
-          ['October',  190],
-        ]);
+			var stats = [["Month", "Bill (in $)"]];
 
-        var options = {
-          title: 'Overall Bill',
-          curveType: '',
-          legend: { position: 'bottom' }
-        };
+function returnData() {
+			return $.getJSON("sampleData.json", function(data) {
+    	/*	$(progress).each(function() {
+					console.log(progress);
+        	$.each(stats.push(progress[1].name, progress[1].myTotal));
+					console.log();
+    		}); */
+				console.log(data);
+				$.each(data, function( key, val ) {
+					stats.push([key, val])
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+				});
 
-        chart.draw(data, options);
-      }
+			}).done(stats)
+			};
+
+function drawChart() {
+      var jsonData = $.ajax({
+          url: "sampleData.json",
+          dataType: "json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
+
+			var options = {
+				title: 'Overall Bill',
+				curveType: '',
+				legend: { position: 'bottom' }
+			};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      chart.draw(data, options);
+    }
+
     </script>
 
   <link rel="stylesheet" href="progress.css">
