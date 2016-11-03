@@ -7,7 +7,42 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/comparisons.css">
+        <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
+        <script>
+            google.charts.load('current', {packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
 
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Type of Bill');
+                data.addColumn('number', 'You');
+                data.addColumn('number', 'City');
+                data.addColumn('number', 'State');
+                data.addRows([
+                    ['Water', 34, 45, 44],
+                    ['Electricity', 70, 54, 50],
+                    ['Gas', 24, 54, 49]
+                ]);
+
+                var w = window,
+                        d = document,
+                        e = d.documentElement,
+                        g = d.getElementsByTagName('body')[0],
+                        windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+                        windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
+                var options = {title: 'Energy Comparison',
+                                width: windowWidth - 160,
+                                height: windowHeight - 200,
+                                vAxis: {format: 'currency'}};
+                var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
+                chart.draw(data, options);
+
+
+                $(window).smartresize(function() {
+                        chart.draw(data, options);
+                });
+            }
+        </script>
         <title>energyStats - Comparisons</title>
 
     </head>
@@ -37,24 +72,12 @@
 
         <div id = "backgroundTab">
             <div id = "itemSelection">
-                <ul>
-                    <li>
-                        <input type = "checkbox" name = "placeShow" value = "You">You
-                    </li>
-                    <li>
-                        <input type = "checkbox" name = "placeShow" value = "City">City
-                    </li>
-                    <li>
-                        <input type = "checkbox" name = "placeShow" value = "State">State
-                    </li>
-                </ul>
                 <select>
                     <option value = "Current">October (Current)</option>
                     <option value = "September">September</option>
                 </select>
             </div>
-
-            <div id = "crazyBreak"></div>
+            <div id = "energy_div"></div>
         </div>
 
         <br/>
