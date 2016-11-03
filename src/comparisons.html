@@ -27,11 +27,11 @@
                 var w = window,
                         d = document,
                         e = d.documentElement,
-                        g = d.getElementsByTagName('body')[0],
-                        windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+                        g = d.getElementById("backgroundTab"),
+                        windowWidth = g.clientWidth || w.innerWidth || e.clientWidth,
                         windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
                 var options = {title: 'Energy Comparison',
-                                width: windowWidth - 160,
+                                width: windowWidth - windowWidth/33 - 60,
                                 height: windowHeight - 200,
                                 vAxis: {format: 'currency'}};
                 var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
