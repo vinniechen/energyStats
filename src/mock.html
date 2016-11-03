@@ -3,102 +3,48 @@
     <head>
         <title>Mock testing page</title>
         <script type = "text/javascript" src = "d3/d3.js"></script>
+        <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
+        <script>
+            google.charts.load('current', {packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Type of Bill');
+                data.addColumn('number', 'You');
+                data.addColumn('number', 'City');
+                data.addColumn('number', 'State');
+                data.addRows([
+                    ['Water', 34, 45, 44],
+                    ['Electricity', 70, 54, 50],
+                    ['Gas', 24, 54, 49]
+                ]);
+
+                var w = window,
+                        d = document,
+                        e = d.documentElement,
+                        g = d.getElementsByTagName('body')[0],
+                        windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+                        windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
+                var options = {title: 'Energy Comparison',
+                                width: windowWidth - 100,
+                                height: windowHeight - 200,
+                                vAxis: {format: 'currency'}};
+                var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
+                chart.draw(data, options);
+
+
+                $(window).smartresize(function() {
+                        chart.draw(data, options);
+                });
+            }
+        </script>
         <script type="text/javascript" src ="scripts/mock.js"></script>
         <link rel = "stylesheet" type = "text/css" href = "stylesheets/mock.css"/>
 
     </head>
 
     <body>
-        <script>
-
-            for(var i = 0; i < 3; i++) {
-                var svg = d3.select("body").append("svg")
-                    .attr("width", 960)
-                    .attr("height", 500),
-                    margin = {top:20, right:20, bottom:30, left:40},
-                    width = 960 - margin.left - margin.right,
-                    height = 500 - margin.top - margin.bottom;
-
-                var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-                    y = d3.scaleLinear().rangeRound([height, 0]);
-
-                var g = svg.append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-                d3.tsv("data" + i + ".tsv", function(d) {
-                                        d.bill = +d.bill;
-                                        return d;
-                                    }, function(error, data) {
-                                        if(error) throw error;
-
-                                        x.domain(data.map(function(d) {return d.user;}));
-                                        y.domain([0, d3.max(data, function(d) {return d.bill;})]);
-
-                                        g.append("g")
-                                            .attr("class", "axis axis--x")
-                                            .attr("transform", "translate(0," + height + ")")
-                                            .call(d3.axisBottom(x));
-
-                                        g.append("g")
-                                                .attr("class", "axis axis--y")
-                                                .call(d3.axisLeft(y).ticks(10))
-                                                .call(d3.axisLeft(y).tickFormat(function(d) {return "$" + d;}))
-                                            .append("text")
-                                                .attr("transform", "rotate(-90)")
-                                                .attr("y", 6)
-                                                .attr("dy", "0.71em")
-                                                .attr("text-anchor", "end")
-                                                .text("Bill");
-
-                                        g.selectAll(".bar")
-                                            .data(data)
-                                            .enter().append("rect")
-                                                .attr("class", "bar")
-                                                .attr("x", function(d) {return x(d.user);})
-                                                .attr("y", function(d) {return y(d.bill);})
-                                                .attr("width", x.bandwidth())
-                                                .attr("height", function(d) {return height - y(d.bill);});
-                                    }
-                );
-            }
-
-
-        </script>
-
-        <div id = "graphCanvas">
-            <div id = "graph">
-                <script type = "text/javascript">
-                    //Set graph settings
-                    var wantedMax = 200;
-                    var graphSets = 3;
-                    var barColors = ["yellow", rgb(100, 100, 100), rgb(255, 255, 255)];
-
-
-                    var dataset = [24, 3, 41, 10, 30, 21, 15, 11, 30];
-
-                    var highestHeight = findMax(dataset);
-                    var scale = 200/highestHeight;
-
-                    var dataSetIndex = 0;
-                    for(var i = 0; i < graphSets; i++) {
-                        var segregatedset = dataset.slice(dataSetIndex, dataSetIndex + Math.floor(dataset.length/graphSets));
-                        dataSetIndex += dataset.length/graphSets;
-                        var thing = d3.select("#graph").selectAll("p").data(segregatedset).enter().append("div");
-                        thing.attr("class", "bar")
-                                    .style("height", function(d) {
-                                                return scale*d + "px";
-                                            });
-                        var barColorIndex = 0;
-                        thing.style("background-color", function(d) {
-                                                return barColors[barColorIndex++];
-                                            });
-                        d3.select("#graph")
-                                    .append("span")
-                                    .attr("class", "graphSpace");
-                    }
-
-                </script>
-            </div>
-        </div>
+        <div id = "energy_div" style = "width: $(window).width() - 100; height:$(window).height();"></div>
     </body>
 </html>
