@@ -33,7 +33,6 @@ app.use(express.session());
 // maps to /static/index.html on this machine
 app.use(express.static(__dirname + '/src'));
 
-app.get('/', index.view);
 
 // Start the server
 var port = process.env.PORT || PORT; // 80 for web, 3000 for development
