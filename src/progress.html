@@ -29,14 +29,14 @@
       }
 
 
-
+/*
   function returnData() {
 			return $.getJSON("sampleData.json", function(data) {
-    	/*	$(progress).each(function() {
+    		$(progress).each(function() {
 					console.log(progress);
         	$.each(stats.push(progress[1].name, progress[1].myTotal));
 					console.log();
-    		}); */
+    		});
 				console.log(data);
 				$.each(data, function( key, val ) {
 					stats.push([key, val])
@@ -44,8 +44,8 @@
 				});
 
 			}).done(stats)
-			};
-
+		};
+*/
 function drawChart() {
       var jsonData = $.ajax({
           url: value + ".json",
@@ -97,10 +97,10 @@ function drawChart() {
 
        <div id = "itemSelection">
           <select id ="graphChange" onchange="updateVariable(this.value)">
-           <option value = "Overall">Overall Bill</option>
-           <option value = "Water">Water Usage</option>
-           <option value = "Electricity">Electricity Usage</option>
-           <option value = "Gas">Gas Usage</option>
+           <option value = "overall">Overall Bill</option>
+           <option value = "water">Water Usage</option>
+           <option value = "electricity">Electricity Usage</option>
+           <option value = "gas">Gas Usage</option>
           </select>
         </div>
 
@@ -108,7 +108,11 @@ function drawChart() {
 
 		<br/>
 		<hr/>
-		<a href = "comparisons.html">Return to comparisons</a>
+		<ul class="pager">
+  <li class="previous"><a href="comparisons.html">Previous</a></li>
+  <li class="next"><a href="highlights.html">Next</a></li>
+</ul>
+		<a href = "">Return to comparisons</a>
 		<a href = "highlights.html">Proceed to highlights</a>
 	</body>
 
