@@ -29,14 +29,14 @@
       }
 
 
-
+/*
   function returnData() {
 			return $.getJSON("sampleData.json", function(data) {
-    	/*	$(progress).each(function() {
+    		$(progress).each(function() {
 					console.log(progress);
         	$.each(stats.push(progress[1].name, progress[1].myTotal));
 					console.log();
-    		}); */
+    		});
 				console.log(data);
 				$.each(data, function( key, val ) {
 					stats.push([key, val])
@@ -44,8 +44,8 @@
 				});
 
 			}).done(stats)
-			};
-
+		};
+*/
 function drawChart() {
       var jsonData = $.ajax({
           url: value + ".json",
