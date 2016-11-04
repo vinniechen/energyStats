@@ -23,9 +23,6 @@
             var state;
 
             function month() {
-                you = Math.floor((Math.random() * 100) + 40);
-                city = Math.floor((Math.random() * 100) + 40);
-                state = Math.floor((Math.random() * 100) + 40);
                 drawChart();
             }
 
@@ -36,7 +33,7 @@
             }
 
 
-            function drawChart() {
+            function drawChart() {          
                 var data = new google.visualization.DataTable();
                 data.addColumn('string', 'Type of Bill');
                 data.addColumn('number', 'You');
