@@ -17,6 +17,10 @@ h3 {
 	
 }
 
+ul.pager {
+	padding: 40px;
+}
+
 #curve_chart {
 	margin-left:auto;
 	margin-right: auto;

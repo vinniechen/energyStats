@@ -1,6 +1,6 @@
 h1 {
 	color: navy;
-	margin-left: 2.5%;
+	margin-left: 10px;
 }
 
 body, html {
@@ -35,6 +35,10 @@ body, html {
 
 #crazyBreak {
     height: 0px;
+}
+
+ul.pager{
+    padding: 20px;
 }
 
 #itemSelection ul {
