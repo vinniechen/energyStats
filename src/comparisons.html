@@ -18,17 +18,36 @@
             google.charts.load('current', {packages: ['corechart']});
             google.charts.setOnLoadCallback(drawChart);
 
+            var you;
+            var city;
+            var state;
+
+            function month() {
+                you = Math.floor((Math.random() * 100) + 40);
+                city = Math.floor((Math.random() * 100) + 40);
+                state = Math.floor((Math.random() * 100) + 40);
+                drawChart();
+            }
+
+            function updateVariable() {
+              you = Math.floor((Math.random() * 100) + 40);
+              city = Math.floor((Math.random() * 100) + 40);
+              state = Math.floor((Math.random() * 100) + 40);
+            }
+
+
             function drawChart() {
                 var data = new google.visualization.DataTable();
                 data.addColumn('string', 'Type of Bill');
                 data.addColumn('number', 'You');
                 data.addColumn('number', 'City');
                 data.addColumn('number', 'State');
-                data.addRows([
-                    ['Water', 34, 45, 44],
-                    ['Electricity', 70, 54, 50],
-                    ['Gas', 24, 54, 49]
-                ]);
+                updateVariable();
+                data.addRow( ['Water', you, city, state] );
+                updateVariable();
+                data.addRow( ['Electricity', you, city, state] );
+                updateVariable();
+                data.addRow( ['Gas', you, city, state] );
 
                 var w = window,
                         d = document,
@@ -72,14 +91,15 @@
 
 
         <h1> Evaluation </h1>
-        <button type = "button" id = "leftButton"></button>
-        <button type = "button" id = "rightButton">></button>
+        <button type = "button" id = "leftButton"> < </button>
+        <button type = "button" id = "rightButton"> > </button>
 
 
 
         <div id = "backgroundTab">
-                <select>
-                    <option value = "Current">October (Current)</option>
+                <select id= "month" onchange="month()">
+                    <option value = "Current">November (Current)</option>
+                    <option value = "October">October</option>
                     <option value = "September">September</option>
                 </select>
             <div id = "energy_div"></div>
