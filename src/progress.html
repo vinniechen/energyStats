@@ -21,8 +21,16 @@
       google.charts.setOnLoadCallback(drawChart);
 
 			var stats = [["Month", "Bill (in $)"]];
+      var value = 'Overall';
+      var chart = ' ';
+      function updateVariable(data) {
+        value = data;
+        drawChart();
+      }
 
-function returnData() {
+
+
+  function returnData() {
 			return $.getJSON("sampleData.json", function(data) {
     	/*	$(progress).each(function() {
 					console.log(progress);
@@ -40,7 +48,7 @@ function returnData() {
 
 function drawChart() {
       var jsonData = $.ajax({
-          url: "sampleData.json",
+          url: value + ".json",
           dataType: "json",
           async: false
           }).responseText;
@@ -49,13 +57,13 @@ function drawChart() {
       var data = new google.visualization.DataTable(jsonData);
 
 			var options = {
-				title: 'Overall Bill',
+				title: value + " Usage",
 				curveType: '',
 				legend: { position: 'bottom' }
 			};
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
       chart.draw(data, options);
     }
 
@@ -87,11 +95,11 @@ function drawChart() {
 			<p> Check your progress! </p>
 
        <div id = "itemSelection">
-          <select>
-           <option value = "overall">Overall Bill</option>
-           <option value = "water">Water Usage</option>
-           <option value = "electricity">Electricity Usage</option>
-           <option value = "gas">Gas Usage</option>
+          <select id ="graphChange" onchange="updateVariable(this.value)">
+           <option value = "Overall">Overall Bill</option>
+           <option value = "Water">Water Usage</option>
+           <option value = "Electricity">Electricity Usage</option>
+           <option value = "Gas">Gas Usage</option>
           </select>
         </div>
 

@@ -1,0 +1,17 @@
+{
+    "cols": [
+          {"id":"","label":"Month","pattern":"","type":"string"},
+          {"id":"","label":"My Total","pattern":"","type":"number"}
+        ],
+
+    "rows": [
+          {"c":[{"v":"April","f":null},{"v":120,"f":null}]},
+          {"c":[{"v":"May","f":null},{"v":124,"f":null}]},
+          {"c":[{"v":"June","f":null},{"v":165,"f":null}]},
+          {"c":[{"v":"July","f":null},{"v":162,"f":null}]},
+          {"c":[{"v":"August","f":null},{"v":162,"f":null}]},
+          {"c":[{"v":"September","f":null},{"v":124,"f":null}]},
+          {"c":[{"v":"October","f":null},{"v":122,"f":null}]},
+          {"c":[{"v":"November","f":null},{"v":103,"f":null}]}
+        ]
+}
