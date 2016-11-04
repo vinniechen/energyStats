@@ -7,6 +7,8 @@
  */
 var PORT = 3000;
 
+
+
 // Express is a web framework for node.js
 // that makes nontrivial applications easier to build
 var express = require('express');
@@ -17,6 +19,7 @@ var app = express();
 // Print logs to the console and compress pages we send
 app.use(express.logger());
 app.use(express.compress());
+
 
 // Return all pages in the /static directory
 // whenever they are requested at '/'

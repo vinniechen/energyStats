@@ -1,0 +1,50 @@
+<html>
+
+    <head>
+        <title>Mock testing page</title>
+        <script type = "text/javascript" src = "d3/d3.js"></script>
+        <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
+        <script>
+            google.charts.load('current', {packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Type of Bill');
+                data.addColumn('number', 'You');
+                data.addColumn('number', 'City');
+                data.addColumn('number', 'State');
+                data.addRows([
+                    ['Water', 34, 45, 44],
+                    ['Electricity', 70, 54, 50],
+                    ['Gas', 24, 54, 49]
+                ]);
+
+                var w = window,
+                        d = document,
+                        e = d.documentElement,
+                        g = d.getElementsByTagName('body')[0],
+                        windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+                        windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
+                var options = {title: 'Energy Comparison',
+                                width: windowWidth - 100,
+                                height: windowHeight - 200,
+                                vAxis: {format: 'currency'}};
+                var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
+                chart.draw(data, options);
+
+
+                $(window).smartresize(function() {
+                        chart.draw(data, options);
+                });
+            }
+        </script>
+        <script type="text/javascript" src ="scripts/mock.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "stylesheets/mock.css"/>
+
+    </head>
+
+    <body>
+        <div id = "energy_div"></div>
+    </body>
+</html>

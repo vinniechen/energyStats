@@ -13,7 +13,43 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheets/comparisons.css">
+        <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
+        <script>
+            google.charts.load('current', {packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
 
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Type of Bill');
+                data.addColumn('number', 'You');
+                data.addColumn('number', 'City');
+                data.addColumn('number', 'State');
+                data.addRows([
+                    ['Water', 34, 45, 44],
+                    ['Electricity', 70, 54, 50],
+                    ['Gas', 24, 54, 49]
+                ]);
+
+                var w = window,
+                        d = document,
+                        e = d.documentElement,
+                        g = d.getElementById("backgroundTab"),
+                        windowWidth = g.clientWidth || w.innerWidth || e.clientWidth,
+                        windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
+                var options = {title: 'Energy Comparison',
+                                width: windowWidth - windowWidth/33 - 60,
+                                height: windowHeight - 200,
+                                backgroundColor: {fill: 'transparent'},
+                                vAxis: {format: 'currency'}};
+                var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
+                chart.draw(data, options);
+
+
+                $(window).smartresize(function() {
+                        chart.draw(data, options);
+                });
+            }
+        </script>
         <title>energyStats - Comparisons</title>
     </head>
 
@@ -42,65 +78,17 @@
 
 
         <div id = "backgroundTab">
-            <div id = "itemSelection">
-                <ul>
-                    <li>
-                        <input type = "checkbox" name = "placeShow" value = "You" checked>You
-                    </li>
-                    <li>
-                        <input type = "checkbox" name = "placeShow" value = "City" checked>City
-                    </li>
-                    <li>
-                        <input type = "checkbox" name = "placeShow" value = "State">State
-                    </li>
-                </ul>
                 <select>
                     <option value = "Current">October (Current)</option>
                     <option value = "September">September</option>
                 </select>
-            </div>
-
-        <div class = "graphDiv">
-        <table id="graph">
-        <thead>
-            <tr>
-            <th></th>
-            <th class="personal">Your Usage</th>
-            <th class="city">City's Usage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="utility" id="electricity">
-            <th scope="row">Electricity</th>
-            <td class="personal bar" style="height: 164px;"><p>$82.41</p></td>
-            <td class="city bar" style="height: 132px;"><p>$66.39</p></td>
-            </tr>
-
-            <tr class="utility" id="water">
-            <th scope="row">Water</th>
-            <td class="personal bar" style="height: 168px;"><p>$84.12</p></td>
-            <td class="city bar" style="height: 200px;"><p>$99.76</p></td>
-            </tr>
-
-            <tr class="utility" id="gas">
-            <th scope="row">Gas</th>
-            <td class="personal bar" style="height: 67px;"><p>$33.64</p></td>
-            <td class="city bar" style="height: 76px;"><p>$38.11</p></td>
-            </tr>
-
-
-        </tbody>
-        </table>
+            <div id = "energy_div"></div>
         </div>
 
-            <div id = "crazyBreak"></div>
-        </div>
 
 
 
 
         <br/>
-        <hr/>
-        <a href = "progress.html">Proceed to personal <br/> progress evaluation</a>
     </body>
 </html>

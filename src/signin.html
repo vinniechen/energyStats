@@ -16,12 +16,16 @@
 
 
     <div id = "mainStuff">
+      Enter SDGE account credentials to sign in and compare your energy usage data
+      <hr/>
       <form action = "http://energystats.herokuapp.com/comparisons.html">
-        <input type = "submit" value = "Sign in to SDGE">
+        Username: <input type = "text" name = "username">
+        <br/><br/>
+        Password: <input type = "password" name = "password">
+        <br/>
+        <hr/>
+        <input id = "signinButton" type = "submit" value = "Sign in to SDGE">
       </form>
     </div>
-    <br/>
-    <hr/>
-    <a href = "comparisons.html">Proceed to comparisons page</a>
   </body>
 </html>
