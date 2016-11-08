@@ -62,11 +62,18 @@ function drawChart() {
     data.addColumn('number', 'You');
     data.addColumn('number', 'City');
     data.addColumn('number', 'State');
+    data.addColumn('string', 'Link');
     data.addRows([
-        ['Electricity', dataRows[0][0], dataRows[1][0], dataRows[2][0]],
-        ['Water', dataRows[0][1], dataRows[1][1], dataRows[2][1]],
-        ['Gas', dataRows[0][2], dataRows[1][2], dataRows[2][2]]
+        ['Electricity', dataRows[0][0], dataRows[1][0], dataRows[2][0],
+      'www.google.com'],
+        ['Water', dataRows[0][1], dataRows[1][1], dataRows[2][1],
+      'www.google.com'],
+        ['Gas', dataRows[0][2], dataRows[1][2], dataRows[2][2],
+      'www.google.com']
     ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1, 2, 3]);
 
     var w = window,
             d = document,
@@ -77,8 +84,21 @@ function drawChart() {
     var options = {title: 'Energy Comparison',
                     vAxis: {format: 'currency',
                   viewWindow: {max: 70, min: 0}}};
+
     var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
-    chart.draw(data, options);
+    chart.draw(view, options);
+
+    function selectHandler() {
+        var selectedItem = chart.getSelection()[0];
+        if (selectedItem) {
+          var value = data.getValue(selectedItem.row, selectedItem.column);
+          window.location = '/highlights.html'
+        }
+      }
+
+
+    // Add our selection handler.
+    google.visualization.events.addListener(chart, 'select', selectHandler);
 
 
 }
