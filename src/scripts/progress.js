@@ -1,6 +1,8 @@
 //dataRows is going to be something like this:
 //[users [months]]
 var dataRows = [];
+var monthsList = [];
+var users = ['You', 'City', 'State'];
 
 $(document).ready(function() {
     setUpDataRows("overall", loadGraph);
@@ -24,6 +26,7 @@ function setUpDataRows(type, callback) {
             $.each(json.data, function(key, month) {
                 //Iterate through each month
                 //Every month stat number starts at zero
+                monthsList[monthNumber] = month.month;
                 var userNumber = 0;
                 $.each(month.statistics, function(key2, stat) {
                     //Iterate through each statistic
@@ -47,6 +50,7 @@ function setUpDataRows(type, callback) {
             //Month number starts at zero
             var monthNumber = 0;
             $.each(json.data, function(i, month) {
+                monthsList[monthNumber] = month.month;
                 var userNumber = 0;
                 $.each(month.statistics, function(j, stat) {
                    if(dataRows[userNumber] == null) {
@@ -69,15 +73,20 @@ function loadGraph() {
 
 function drawChart() {
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Usage');
+    data.addColumn('string', 'User');
     data.addColumn('number', 'You');
     data.addColumn('number', 'City');
     data.addColumn('number', 'State');
-    data.addRows([
-        ['You', dataRows[0][0], dataRows[0][1], dataRows[0][2]],
-        ['City', dataRows[1][0], dataRows[1][1], dataRows[1][2]],
-        ['State', dataRows[2][0], dataRows[2][1], dataRows[2][2]]
-    ]);
+    //Input all row data, adding every month to a row
+    //then putting row in data table
+    for(var mon = monthsList.length - 1; mon >= 0; mon--) {
+        var row = [];
+        row[0] = monthsList[mon];
+        for(var usr = 0; usr < users.length; usr++) {
+            row[usr+1] = dataRows[usr][mon];
+        }
+        data.addRow(row);
+    }
 
     var options = {title: 'Energy Comparison',
                     vAxis: {format: 'currency'}};
