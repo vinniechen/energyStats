@@ -68,6 +68,29 @@
           "gas": 46
         }
       ]
+    },
+    {
+      "month" : "August",
+      "statistics": [
+        {
+          "user": "You",
+          "electricity" : 52,
+          "water" : 65,
+          "gas" : 28
+        },
+        {
+          "user": "City",
+          "electricity" : 51,
+          "water" : 52,
+          "gas" : 45
+        },
+        {
+          "user": "State",
+          "electricity" : 49,
+          "water" : 51,
+          "gas": 46
+        }
+      ]
     }
   ]
 }
