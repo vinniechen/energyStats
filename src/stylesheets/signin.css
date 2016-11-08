@@ -3,13 +3,10 @@
   width: 800px;
   margin: 0 auto;
 }
-body {
-  text-align: center;
-}
+
 
 #mainStuff {
-  text-align: center;
-  /*
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -17,11 +14,10 @@ body {
     width: 400px;
     margin-top: -170px;
     margin-left: -200px;
-    */
 }
 
 #mainStuff input #signinButton {
-    text-align: center;
+
     height:200px;
     width:400px;
     font-weight: bold;
