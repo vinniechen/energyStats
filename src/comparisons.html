@@ -1,77 +1,25 @@
 <html>
     <head>
-        <!--jquery-->
-        <script src="jquery-3.1.1.min.js"></script>
+        <!--Plugins-->
+            <!--jQuery-->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <!--Boostrap Nav Bar-->
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <!--Google Charts-->
+                <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
+        <!--Scripts-->
+            <script type = "text/javascript" src = "scripts/comparisons.js"></script>
 
-        <!--d3 graph-->
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-
-        <!--Boostrap Nav Bar-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="stylesheets/comparisons.css">
-        <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
-        <script>
-            google.charts.load('current', {packages: ['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-
-            var you;
-            var city;
-            var state;
-
-            function month() {
-                drawChart();
-            }
-
-            function updateVariable() {
-              you = Math.floor((Math.random() * 100) + 40);
-              city = Math.floor((Math.random() * 100) + 40);
-              state = Math.floor((Math.random() * 100) + 40);
-            }
-
-
-            function drawChart() {          
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Type of Bill');
-                data.addColumn('number', 'You');
-                data.addColumn('number', 'City');
-                data.addColumn('number', 'State');
-                updateVariable();
-                data.addRow( ['Water', you, city, state] );
-                updateVariable();
-                data.addRow( ['Electricity', you, city, state] );
-                updateVariable();
-                data.addRow( ['Gas', you, city, state] );
-
-                var w = window,
-                        d = document,
-                        e = d.documentElement,
-                        g = d.getElementById("backgroundTab"),
-                        windowWidth = g.clientWidth || w.innerWidth || e.clientWidth,
-                        windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
-                var options = {title: 'Energy Comparison',
-                                width: windowWidth - windowWidth/33 - 60,
-                                height: windowHeight - 200,
-                                backgroundColor: {fill: 'transparent'},
-                                vAxis: {format: 'currency'}};
-                var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
-                chart.draw(data, options);
-
-
-                $(window).smartresize(function() {
-                        chart.draw(data, options);
-                });
-            }
-        </script>
         <title>energyStats - Comparisons</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/comparisons.css">
     </head>
 
     <body>
 
-        <!--Boostrap Nav Bar-->
+        <!-- Navigation Bar -->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                     <div class="navbar-header">
@@ -87,21 +35,23 @@
         </nav>
 
 
+        <!-- Content -->
         <h1> Evaluation </h1>
+        <p> Compare your stats against the city and state average! </p>
 
 
 
         <div id = "backgroundTab">
-                <select id= "month" onchange="month()">
-                    <option value = "Current">November (Current)</option>
-                    <option value = "October">October</option>
-                    <option value = "September">September</option>
+            <form>
+                <select name = "dropdown" id = "monthDropdown">
                 </select>
-            <div id = "energy_div"></div>
+            </form>
+            <center><div id = "energy_div" style="width: 900px; height: 500px"></div></center>
         </div>
 
         <br/>
 
+        <!-- will have to take this shit out -->
         <ul class="pager">
           <li><a href="progress.html">Check Your Progress</a></li>
         </ul>

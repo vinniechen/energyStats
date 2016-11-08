@@ -1,118 +1,64 @@
 <html>
 
-	<head>
+    <head>
+        <!-- Plugins -->
+            <!--Boostrap Nav Bar-->
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <!--jQuery-->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <!--Google Charts-->
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-	<!--jquery-->
- <!-- <script src="jquery-3.1.1.min.js"></script> -->
-  <title>energyStats - Progress</title>
-	<!--d3 graph-->
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<!--Boostrap Nav Bar-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--Scripts-->
+            <script src = "scripts/progress.js"></script>
 
-  <!--google charts open source. will ask Calvin later-->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-			var stats = [["Month", "Bill (in $)"]];
-      var value = 'Overall';
-      var chart = ' ';
-      function updateVariable(data) {
-        value = data;
-        drawChart();
-      }
+        <title>energyStats - Progress</title>
+        <link rel="stylesheet" href="stylesheets/progress.css">
+    </head>
 
 
-/*
-  function returnData() {
-			return $.getJSON("sampleData.json", function(data) {
-    		$(progress).each(function() {
-					console.log(progress);
-        	$.each(stats.push(progress[1].name, progress[1].myTotal));
-					console.log();
-    		});
-				console.log(data);
-				$.each(data, function( key, val ) {
-					stats.push([key, val])
-
-				});
-
-			}).done(stats)
-		};
-*/
-function drawChart() {
-      var jsonData = $.ajax({
-          url: value + ".json",
-          dataType: "json",
-          async: false
-          }).responseText;
-
-      // Create our data table out of JSON data loaded from server.
-      var data = new google.visualization.DataTable(jsonData);
-
-			var options = {
-				title: value + " Bill",
-				curveType: '',
-				legend: { position: 'bottom' }
-			};
-
-      // Instantiate and draw our chart, passing in some options.
-      chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-      chart.draw(data, options);
-    
-    }
-
-    </script>
-
-  <link rel="stylesheet" href="progress.css">
-  </head>
-
-	<title> Progress </title>
-<body>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="">Energy Stats</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="signin.html">Login</a></li>
-      <li><a href="comparisons.html">Comparison</a></li>
-      <li class="active"><a href="progress.html">Progress</a></li>
-      <li><a href="highlights.html">Tips</a></li>
-    </ul>
-  </div>
-</nav>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Energy Stats</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="signin.html">Login</a></li>
+                    <li><a href="comparisons.html">Comparison</a></li>
+                    <li class="active"><a href="progress.html">Progress</a></li>
+                    <li><a href="highlights.html">Tips</a></li>
+                </ul>
+            </div>
+        </nav>
 
 
+        <!-- Content -->
+        <h1> Progress </h1>
+        <p> Check your progress! </p>
 
-	<h1> Progress </h1>
-		<p> Check your progress! </p>
+        <div id = "itemSelection">
+            <select id ="billDropdown">
+                <option value = "overall" selected = "selected">Overall Bill</option>
+                <option value = "water">Water Usage</option>
+                <option value = "electricity">Electricity Usage</option>
+                <option value = "gas">Gas Usage</option>
+            </select>
+        </div>
 
-      <div id = "itemSelection">
-        <select id ="graphChange" onchange="updateVariable(this.value)">
-        <option value = "Overall">Overall Bill</option>
-        <option value = "Water">Water Usage</option>
-        <option value = "Electricity">Electricity Usage</option>
-        <option value = "Gas">Gas Usage</option>
-        </select>
-      </div>
 
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+        <center><div id="energy_div" style="width: 900px; height: 500px"></div></center>
 
-		<br/>
-		<hr/>
- 
-		<ul class="pager">
-      <li class="previous"><a href="comparisons.html">Previous</a></li>
-      <li class="next"><a href="highlights.html">Next</a></li>
-    </ul>
+        <br/>
+        <hr/>
+        <!-- will have to take this shit out -->
+        <ul class="pager">
+            <li class="previous"><a href="comparisons.html">Previous</a></li>
+            <li class="next"><a href="highlights.html">Next</a></li>
+        </ul>
 
 	</body>
 

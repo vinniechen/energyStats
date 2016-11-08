@@ -1,0 +1,73 @@
+{
+  "data" : [
+    {
+      "month" : "November",
+      "statistics": [
+        {
+          "user": "You",
+          "electricity" : 50,
+          "water" : 47,
+          "gas" : 47
+        },
+        {
+          "user": "City",
+          "electricity" : 50,
+          "water" : 49,
+          "gas" : 47
+        },
+        {
+          "user": "State",
+          "electricity" : 50,
+          "water" : 50,
+          "gas": 46
+        }
+      ]
+    },
+    {
+      "month" : "October",
+      "statistics": [
+        {
+          "user": "You",
+          "electricity" : 48,
+          "water" : 58,
+          "gas" : 40
+        },
+        {
+          "user": "City",
+          "electricity" : 51,
+          "water" : 55,
+          "gas" : 43
+        },
+        {
+          "user": "State",
+          "electricity" : 54,
+          "water" : 52,
+          "gas": 45
+        }
+      ]
+    },
+    {
+      "month" : "September",
+      "statistics": [
+        {
+          "user": "You",
+          "electricity" : 43,
+          "water" : 67,
+          "gas" : 25
+        },
+        {
+          "user": "City",
+          "electricity" : 50,
+          "water" : 53,
+          "gas" : 46
+        },
+        {
+          "user": "State",
+          "electricity" : 51,
+          "water" : 52,
+          "gas": 46
+        }
+      ]
+    }
+  ]
+}

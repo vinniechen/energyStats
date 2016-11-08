@@ -1,0 +1,7 @@
+{
+  "id": "parentId",
+  "name": "parentName",
+  "children": [
+    {"id":"child1Id","name":"child1Name"},
+    {"id":"child2Id","name":"child2Name"}]
+}
