@@ -3,6 +3,12 @@ body {
 
 }
 
+#page-wrap {
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
 h1 {
 	color: navy;
 	margin-left: 10px;
