@@ -89,7 +89,9 @@ function drawChart() {
     }
 
     var options = {title: 'Energy Comparison',
-                    vAxis: {format: 'currency'}};
+                    vAxis: {format: 'currency',
+                //    viewWindow: {max: 150, min: 0}
+                  }};
     var chart = new google.visualization.LineChart(document.getElementById('energy_div'));
     chart.draw(data, options);
 }

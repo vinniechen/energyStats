@@ -6,15 +6,18 @@ body {
 h1 {
 	color: navy;
 	margin-left: 10px;
+	text-align: center;
 }
 
 p {
 	margin-left: 20px;
+	text-align: center;
 }
 
 h3 {
 	margin-left: 30px;
-	
+	text-align: center;
+
 }
 
 ul.pager {

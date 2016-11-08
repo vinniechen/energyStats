@@ -75,7 +75,8 @@ function drawChart() {
             windowWidth = w.innerWidth || e.clientWidth || g.clientWidth,
             windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
     var options = {title: 'Energy Comparison',
-                    vAxis: {format: 'currency'}};
+                    vAxis: {format: 'currency',
+                  viewWindow: {max: 70, min: 0}}};
     var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
     chart.draw(data, options);
 
