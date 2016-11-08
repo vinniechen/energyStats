@@ -1,7 +1,10 @@
 #page-wrap {
-  text-align: center;
+  text-align: left;
   width: 800px;
   margin: 0 auto;
+}
+body {
+  text-align: center;
 }
 
 #mainStuff {
