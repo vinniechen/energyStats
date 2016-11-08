@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+ }
+
+#page-wrap {
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+body {
+	background-color: white;
+  text-align: center;
+
+}
+h3 {
+	color: navy;
+	margin-left: 10px;
+	text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+li {
+  text-align: center;
+}
