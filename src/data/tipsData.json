@@ -1,0 +1,32 @@
+{
+  "tips": {
+    "water": [
+      "Limit your showers to less than 10 minutes by using a shower timer.",
+      "Wash clothes in full loads to avoid wasting water.",
+      "Opt for water wise plants in your garden such as succulents.",
+      "If there's a spike in your water bill, there may be a leak somewhere in your house.",
+      "Fill your sink with water to hand wash dishes, instead of letting the water run while you're scrubbing.",
+      "Water plants in the early morning so water evaporates less.",
+      "Choose efficient water fixtures (shower heads, faucets, etc.)."
+    ],
+    "electricity": [
+      "Look for ENERGY STAR label on products that use energy because they meet strict efficiency guidelines.",
+      "Plug home electronics such as TVs into power strips.",
+      "Change your lightbults to CFL bulbs. They use 75% less energy and last up to 10 times longer than traditional bulbs.",
+      "Keep curtains or shades open to use daylighting instead of turning on lights.",
+      "Air dry your dishes. Most of the energy used by a dishwasher is for water heating.",
+      "Look into smart appliances that can be connected to smart electric meters of home energy management systems.",
+      "Keep your refrigerator 35-38 degrees Fahrenheight.",
+      "Cover liquids and wrap foods stored in the refrigerator, as uncovered foods release moisture and make the compressor work harder.",
+      "Consider air drying clothes. Dryers use an average 1000 kwh/year.",
+      "Turn off and unplug appliances when they are not in use."
+    ],
+    "gas": [
+      "Lower the thermostat on your water heater to 120 F.",
+      "Save as much as 10% a year on heating and cooling by turning your thermostat back 7-10 F for 8 hours a day.",
+      "Close your curtains and shades facing the sun to keep your home cool during the summer and reduce the need for air conditioning.",
+      "Wash clothes in cold water whenever possible."
+    ]
+  }
+
+}

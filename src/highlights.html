@@ -1,41 +1,50 @@
 <html>
-  <head>
-  <!--Boostrap Nav Bar-->
-  <link rel="stylesheet" href="stylesheets/highlights.css">
-  <title>Bootstrap Case</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <head>
+    <!--Plugins-->
+        <!--jQuery-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--Boostrap Nav Bar-->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!--Scripts-->
+            <script src="./scripts/highlights.js"></script>
 
-    <title>energyStats - Highlights</title>
-  </head>
+        <title>energyStats - Highlights</title>
+        <link rel="stylesheet" href="stylesheets/highlights.css">
+    </head>
 
-  <body>
+    <body>
 
-  	<!--Boostrap Nav Bar-->
-  	<nav class="navbar navbar-default">
- 	 <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="">Energy Stats</a>
+    <!--Boostrap Nav Bar-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">Energy Stats</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="comparisons.html">Comparison</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="active"><a href="highlights.html">Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h3> Tips Based on Your Usage </h3>
+    <div id = "water">
+        <h2 class = "tipCategoryTitle"></h2>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="comparisons.html">Comparison</a></li>
-      <li><a href="progress.html">Progress</a></li>
-      <li class="active"><a href="highlights.html">Tips</a></li>
-    </ul>
-  	</div>
-	</nav>
-<h3> Tips Based on Your Usage </h3>
-<h4><a href="comparisons.html"> Back to Your Usage </a> </h4>
+    <div id = "electricity">
+        <h2 class = "tipCategoryTitle"></h2>
+    </div>
+    <div id = "gas">
+        <h2 class = "tipCategoryTitle"></h2>
+    </div>
 
-
-	  </div>
-</div>
 
     <br/>
     <hr/>
-    
-  </body>
+
+    </body>
 </html>
