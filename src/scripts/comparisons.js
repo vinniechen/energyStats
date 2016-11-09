@@ -1,4 +1,5 @@
 var dataRows = [];
+var maxHeight = 0;
 
 $(document).ready(function() {
     setupData(function() {
@@ -22,6 +23,11 @@ function setupData(callback) {
                 var monthExpression = value.month;
                 if(index == 0) monthExpression += " (Current)"
                 $('#monthDropdown').append("<option value ='" + index + "'>" + monthExpression + "</option>");
+                $.each(value.statistics, function(key2, stat) {
+                        if(stat.electricity > maxHeight) maxHeight = stat.electricity;
+                        else if (stat.water > maxHeight) maxHeight = stat.water;
+                        else if(stat.gas > maxHeight) maxHeight = stat.gas;
+                });
                 index++;
             });
             callback();
@@ -39,7 +45,6 @@ function updateData(index, callback) {
                             dataRows[userRow][0] = stat.electricity;
                             dataRows[userRow][1] = stat.water;
                             dataRows[userRow][2] = stat.gas;
-
                             userRow++;
                     });
                 }
@@ -83,7 +88,7 @@ function drawChart() {
             windowHeight = w.innerHeight || e.clientHeight || g.clientHeight;
     var options = {title: 'Energy Comparison',
                     vAxis: {format: 'currency',
-                  viewWindow: {max: 70, min: 0}}};
+                  viewWindow: {max: maxHeight + 10, min: 0}}};
 
     var chart = new google.visualization.ColumnChart(document.getElementById('energy_div'));
     chart.draw(view, options);
