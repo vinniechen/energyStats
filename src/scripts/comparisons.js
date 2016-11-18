@@ -95,10 +95,10 @@ function drawChart() {
 
     function selectHandler() {
         var selectedItem = chart.getSelection()[0];
-        if (selectedItem) {
-          var value = data.getValue(selectedItem.row, selectedItem.column);
-          window.location = '/highlights.html'
+        if(selectedItem.row != null) {
+            window.location = 'highlights.html';
         }
+
       }
 
 
