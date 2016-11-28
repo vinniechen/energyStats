@@ -11,7 +11,22 @@
             <!--Google Charts-->
                 <script type = "text/javascript" src = "http://gstatic.com/charts/loader.js"></script>
         <!--Scripts-->
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-88089228-1', 'auto');
+              ga('send', 'pageview');
+
+                function clickedEnergyDiv() {
+                    ga('send', 'event', 'energyDiv', 'click');
+                }
+
+            </script>
             <script type = "text/javascript" src = "scripts/comparisons.js"></script>
+
 
         <title>energyStats - Comparisons</title>
         <link rel="stylesheet" type="text/css" href="stylesheets/comparisons.css">
@@ -45,7 +60,7 @@
                 <select name = "dropdown" id = "monthDropdown">
                 </select>
             </form>
-            <center><div id = "energy_div" style="width: 900px; height: 500px"></div></center>
+            <center><div id = "energy_div" onclick="clickedEnergyDiv" style="width: 900px; height: 500px"></div></center>
         </div>
 
 
