@@ -13,6 +13,7 @@ $(document).ready(function() {
         updateData(month, function() {loadGraph()});
 
    })
+    document.getElementById('energy_div').addEventListener('click', clickedEnergyDiv, false);
 });
 
 function setupData(callback) {
