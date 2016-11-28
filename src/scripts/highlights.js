@@ -88,12 +88,26 @@ function gatherHighlightsData(callback) {
 
 function applyTips() {
     $.each(typeOfBillList, function(i1, typeOfBill) {
-        $("#" + typeOfBill + " .tipCategoryTitle").append(capitalizeFirstLetter(typeOfBill));
-        if(subjectiveTips[i1].length > 1) {
+        if(typeOfBill === localStorage.tipChosen) {
+            $("#" + typeOfBill).css({
+                "backgroundColor": 'lime',
+                "color": "white",
+                "padding-bottom": "15px",
+                "padding-top": "1px",
+            });
+            $("#" + typeOfBill + " .tipCategoryTitle").append("<b>" + capitalizeFirstLetter(typeOfBill) + "</b>");
+        }
+        else {
+            $("#" + typeOfBill + " .tipCategoryTitle").append(capitalizeFirstLetter(typeOfBill));
+        }
 
-            $("#" + typeOfBill).append("<ul>")
+
+        if(subjectiveTips[i1].length > 1) {
+            $("#" + typeOfBill).append("<ul>");
             $.each(subjectiveTips[i1], function(i2, subjectiveTip) {
-                if(i2 == 0) $("#"+typeOfBill).append(subjectiveTip + "<br/>");
+                if(i2 == 0) {
+                     $("#"+typeOfBill).append(subjectiveTip + "<br/>");
+                }
                 else $("#"+typeOfBill).append("<li>" + subjectiveTip + "</li>");
             });
             $("#" + typeOfBill).append("</ul>")
@@ -103,6 +117,8 @@ function applyTips() {
                 $("#"+typeOfBill).append(subjectiveTip + "<br/>");
             });
         }
+
+
     });
 }
 

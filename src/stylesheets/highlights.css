@@ -26,3 +26,8 @@ h4 {
 li {
   text-align: center;
 }
+
+#chosenTipDiv {
+  background-color: lime;
+  color: white;
+}

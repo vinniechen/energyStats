@@ -96,6 +96,19 @@ function drawChart() {
 
     function selectHandler() {
         var selectedItem = chart.getSelection()[0];
+        switch(selectedItem.row) {
+            case 0:
+                changeTipChosen('electricity');
+                break;
+            case 1:
+                changeTipChosen('water');
+                break;
+            case 2:
+                changeTipChosen('gas');
+                break;
+            default:
+                break;
+        }
         if(selectedItem.row != null) {
             window.location = 'highlights.html';
         }
