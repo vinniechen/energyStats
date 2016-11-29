@@ -88,7 +88,7 @@ function gatherHighlightsData(callback) {
 
 function applyTips() {
     $.each(typeOfBillList, function(i1, typeOfBill) {
-        if(typeOfBill === localStorage.tipChosen) {
+        if(typeOfBill === localStorage.getItem('tipChosen')) {
             $("#" + typeOfBill).css({
                 "backgroundColor": 'lime',
                 "color": "white",
