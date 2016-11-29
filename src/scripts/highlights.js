@@ -118,6 +118,10 @@ function applyTips() {
             });
         }
 
+        if(typeOfBill === localStorage.getItem('tipChosen')) {
+            $("#" + typeOfBill).append("<a href = 'comparisons.html'> <hr/>Return to Graph </a>");
+        }
+
 
     });
 }
