@@ -90,7 +90,7 @@ function applyTips() {
     $.each(typeOfBillList, function(i1, typeOfBill) {
         if(typeOfBill === localStorage.getItem('tipChosen')) {
             $("#" + typeOfBill).css({
-                "backgroundColor": 'lime',
+                "backgroundColor": 'lightgreen',
                 "color": "white",
                 "padding-bottom": "15px",
                 "padding-top": "1px",
