@@ -1,4 +1,4 @@
-var tipChosen = "water";
+localStorage.tipChosen = "";
 
 function changeTipChosen(tipChosenName) {
     tipChosen = tipChosenName;
